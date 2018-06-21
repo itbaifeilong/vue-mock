@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import myvuex from '@/components/myvuex'
 
 //import Mock from '@/components/mock'
 //import Add from '@/components/people/add.vue'
@@ -64,6 +65,10 @@ export default new Router({
 		   {
 		   	path:'/gwc',
 		   	component:gwc,
+		   },
+		   {
+		   	path:'/myvuex',
+		   	component:myvuex,
 		   }
       
       ]
