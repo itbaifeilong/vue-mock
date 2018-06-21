@@ -37,33 +37,33 @@
 //				return this.$store.state.count
 //			},
 		 //state简便写法
-			...mapState({
-				num:'count'
-			}),
+//			...mapState({
+//				num:'count'
+//			}),
 			//原始写法
 //			arrList () {
 //		    		return this.$store.getters.arrList;
 //		  	},
 				//getters简便写法
-			  ...mapGetters({
-			  	newArr:'arrList'
-			  })
+//			  ...mapGetters({
+//			  	newArr:'arrList'
+//			  })
 		},
 		methods: {
-			increment() {
-				this.$store.commit('increment')
-			},
-			decrement() {
-				this.$store.commit('decrement')
-			},
-			add(){
-				this.$store.dispatch('increment').then((data) => {
-					console.log(data,'312312');
-			})
-			}
+//			increment() {
+//				this.$store.commit('increment')
+//			},
+//			decrement() {
+//				this.$store.commit('decrement')
+//			},
+//			add(){
+//				this.$store.dispatch('increment').then((data) => {
+//					console.log(data,'312312');
+//			})
+//			}
 		},
 		mounted(){
-			this.add()
+//			this.add()
 		}
 	}
 </script>
