@@ -5,7 +5,7 @@
 		<p>名字：{{ $route.params.username}}</p>
 		<p>ID：{{$route.params.post_id}}</p>
 		<div>
-			<h1>--------state--------</h1>
+			<!--<h1>--------state--------</h1>
 			<p>{{num}}</p>
 			<p>
 			    <button @click="increment">+</button>
@@ -16,14 +16,14 @@
 			<h1>--------getters---------</h1>
 			<ul>
 				<li v-for="item in newArr">{{item}}</li>
-			</ul>
+			</ul>-->
 			
 		</div>
 	</div>
 </template>
 
 <script>
-	import {mapState,mapGetters} from "vuex"
+//	import {mapState,mapGetters} from "vuex"
 	export default {
 		data() {
 			return {

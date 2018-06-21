@@ -31,6 +31,11 @@
 	4.echarts 简单实现。  (echarts网址：http://echarts.baidu.com/examples/#chart-type-bar)
 	5.路由按需加载，动态路由，重定向，别名，都有涉及
 	6.vuex的state，getters，muation，action，简单实现。
+	
+	
+	//*************************
+	新增 myvuex.vue   主要实现vuex状态的一些功能实践 （参考学习地址：https://github.com/XuXiaoGH/vuex-test）
+	新增store / modules /todo 文件夹 
 
 //*****************************
 项目的主要文件夹的意思
