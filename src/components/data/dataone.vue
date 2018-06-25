@@ -20,9 +20,7 @@
 		created() {
 			//mock模拟接口，传数据
 			axios.get('/api/ul').then(data => {
-				console.log(data);
 				this.table = data.data.data;
-				console.log(this.table)
 			});
 		},
 	}

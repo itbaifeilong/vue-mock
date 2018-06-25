@@ -27,6 +27,9 @@
 						<el-menu-item index="2-2">
 							<router-link to="/datatwo">{{table.datatwo}}</router-link>
 						</el-menu-item>
+						<el-menu-item index="2-2">
+							<router-link to="/datathree">pug简单运用</router-link>
+						</el-menu-item>
 					</el-menu-item-group>
 				</el-submenu>
 				<el-submenu index="3">
@@ -100,7 +103,7 @@
 			})
 			//数据分离，模拟端口
 			this.$axios.post('/api/cesi').then(res => {
-				console.log(res,'31231')
+//				console.log(res,'31231')
 			})
 		},
 		mounted() {

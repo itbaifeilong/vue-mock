@@ -9,6 +9,7 @@ import Personal from '@/components/people/personal.vue'
 import Login from '@/components/login/login.vue'
 import dataone from '@/components/data/dataone.vue'
 import datatwo from '@/components/data/datatwo.vue'
+import datathree from '@/components/data/datathree.vue'
 import echart1 from '@/components/create/echart1.vue'
 import gwc from '@/components/create/gwc'
 import create from '@/components/add/create.vue'
@@ -69,6 +70,10 @@ export default new Router({
 		   {
 		   	path:'/myvuex',
 		   	component:myvuex,
+		   },
+		   {
+		   	path:'/datathree',
+		   	component:datathree,
 		   }
       
       ]

@@ -1,4 +1,7 @@
 const Mock = require('mockjs')
+//数据分离。
+import cesi from './json.js'
+Mock.mock('/api/cesi','post',cesi.data);
 //使用mockjs模拟数据
 Mock.mock('/api/data', (req, res) => {
 	return {
@@ -149,6 +152,4 @@ Mock.mock('/api/gwc', (req, res) => {
 		],
 	}
 });
-//数据分离。
-import data from './json.js'
-Mock.mock('/api/cesi','post',data.data);
+

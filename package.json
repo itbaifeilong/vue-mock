@@ -16,6 +16,7 @@
     "js-cookie": "^2.2.0",
     "jsoneditor": "^5.17.1",
     "mockjs": "^1.0.1-beta3",
+    "pug-cli": "^1.0.0-alpha6",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.1",
     "vue-resource": "^1.5.1",
