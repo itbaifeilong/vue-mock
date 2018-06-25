@@ -149,3 +149,6 @@ Mock.mock('/api/gwc', (req, res) => {
 		],
 	}
 });
+//数据分离。
+import data from './json.js'
+Mock.mock('/api/cesi','post',data.data);

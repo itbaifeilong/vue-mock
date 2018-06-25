@@ -64,7 +64,7 @@
 						this.user = res.data.data;
 						
 						for(var i =0;i<this.user.length;i++){
-							if(name == this.user[i].username ||password == this.user[i].password ){
+							if(name == this.user[i].username&&password == this.user[i].password ){
 								this.tishi = "登录成功"
 								this.showTishi = true
 								setCookie('username', this.username, 1000 * 60)
@@ -97,7 +97,7 @@
 								var newPassword = this.newPassword;
 								this.user =  res.data.data;
 								for(var i =0;i<this.user.length;i++){
-									if(newName == this.user[i].username || newPassword == this.user[i].password){
+									if(newName == this.user[i].username&&newPassword == this.user[i].password){
 										this.tishi = "用户名存在"
 										this.showTishi = true
 										this.newUsername = "";

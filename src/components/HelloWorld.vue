@@ -98,6 +98,10 @@
 			this.$axios.get('/api/url').then(data => {
 				//				console.log(data,'url');
 			})
+			//数据分离，模拟端口
+			this.$axios.post('/api/cesi').then(res => {
+				console.log(res,'31231')
+			})
 		},
 		mounted() {
 			/*页面挂载获取保存的cookie值，渲染到页面上*/
