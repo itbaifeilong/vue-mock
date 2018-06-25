@@ -9,6 +9,7 @@ import axios from 'axios'
 import mockdata from "./mock"
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'jsoneditor/dist/jsoneditor.min.css'
 import components from './components/common'
 Vue.use(ElementUI)
 //通过原型全局引用axios

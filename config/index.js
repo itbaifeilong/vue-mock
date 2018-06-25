@@ -13,9 +13,9 @@ module.exports = {
     proxyTable: {},
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    host: 'localhost', // can be overwritten by process.env.HOST  主机名
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined 端口号（默认8080）
+    autoOpenBrowser: true,//是否自动打开浏览器	  想让浏览器自动打开，只需将false改为true即可，为防止端口号冲突，这里也可以随意更改端口号
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-

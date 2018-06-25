@@ -24,7 +24,7 @@
 				</template>
 			</el-table-column>
 			<el-dialog custom-class="el-dialog-height" title="用户信息" :visible.sync="dialogVisible" append-to-body>
-
+				
 				<kd-jsoneditor v-loading="dialogLoading" :data="jsonData"></kd-jsoneditor>
 			</el-dialog>
 
