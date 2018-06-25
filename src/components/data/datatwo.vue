@@ -164,7 +164,7 @@
 				this.form.dz = ""
 			},
 			quxiao() {
-				this.dialogFormVisible = false;
+				this.tianjia = false;
 				this.form.name = "";
 				this.form.data = "";
 				this.form.sf = "";

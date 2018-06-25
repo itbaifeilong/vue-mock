@@ -81,8 +81,6 @@
 				}else if(this.picLyanzhengma.toUpperCase()!=this.checkCode){
 					this.yzm ="验证码输入错误"
 					this.showYzm = true
-				}else{
-					this.yzm ="输入正确"
 				}
 			},
 			login() {
