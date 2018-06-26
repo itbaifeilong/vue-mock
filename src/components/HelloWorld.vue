@@ -69,12 +69,13 @@
 						</el-dropdown-item>
 					</el-dropdown-menu>
 				</el-dropdown>
-				<label for="locale">语言</label>
-				<select v-model="locale">
+				<label for="locale" @click="yuyan">{{language}}</label>
+				<select v-model="locale" v-if="show">
 			      <option value="en">English</option>
 			      <option value="cn">中文</option>
 			    </select>
-				<span>{{name}}</span>
+				
+				<span style="padding-left: 20px;">{{name}}</span>
 			</el-header>
 
 			<el-main>
@@ -95,7 +96,9 @@
 				name: '',
 				loading: true,
 				lang:'en',
-				locale:'cn'
+				locale:'cn',
+				show:false,
+				language:'切换语言'
 			}
 		},
 		watch:{
@@ -129,6 +132,10 @@
 			}
 		},
 		methods: {
+			yuyan(){
+				this.show = true;
+				this.language = '';
+			},
 			switchLang()  {
         			this.$i18n.locale = this.lang 
 			},

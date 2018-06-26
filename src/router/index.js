@@ -19,7 +19,7 @@ import create from '@/components/add/create.vue'
 const Add = () => import('@/components/people/add.vue')
 import Cookies from 'js-cookie';
 Vue.use(Router)
-
+import {getCookie} from '../assets/js/cook.js'
 export default new Router({
   routes: [
   	{
@@ -31,6 +31,16 @@ export default new Router({
       path: '/HelloWorld',
       name: 'HelloWorld',
       component: HelloWorld,
+      //跳转拦截
+      beforeEnter: (to, from, next) => {
+		        var token = getCookie('username');
+			 	console.log('token:',token)
+			   	if(token){
+			   	 	next()
+			   	}else{
+			   		next({ path: '/' })
+			   	}
+	},
       children:[
       	 {
 	      	 path: '/Add/:id',
@@ -57,8 +67,7 @@ export default new Router({
 		    	path: '/echart1',
 		    name: 'echart1',
 		    	component: echart1,
-		    alias: 'eqweqw'	//别名
-		    	
+		    alias: 'eqweqw'	,//别名
 		   },
 		   {
 		   	path:'/create',

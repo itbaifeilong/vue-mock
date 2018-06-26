@@ -2,23 +2,23 @@
 	<el-container>
 		<el-header align="left">
 			<el-button type="primary" size="small" @click="addBind()">添加</el-button>
-			<input type="text" v-model="select" placeholder="请输入查询内容" @blur="cx()" class="text1"/>
-			
+			<input type="text" v-model="select" placeholder="请输入查询内容"  class="text1"/>
+			<el-button type="success" @click="cx()">成功按钮</el-button>
 		</el-header>
 		<el-table :data="tableData" border style="width: 100%">
-			<el-table-column fixed prop="date" label="日期" width="150">
+			<el-table-column fixed prop="date" label="日期" width="150" sortable>
 			</el-table-column>
-			<el-table-column prop="name" label="姓名" width="120">
+			<el-table-column prop="name" label="姓名" width="120" align='center'>
 			</el-table-column>
-			<el-table-column prop="province" label="省份" width="120">
+			<el-table-column prop="province" label="省份" width="120" align='center'>
 			</el-table-column>
-			<el-table-column prop="city" label="市区" width="120">
+			<el-table-column prop="city" label="市区" width="120" align='center'>
 			</el-table-column>
-			<el-table-column prop="address" label="地址" width="300">
+			<el-table-column prop="address" label="地址" width="300" align='center'> 
 			</el-table-column>
-			<el-table-column prop="zip" label="邮编" width="120">
+			<el-table-column prop="zip" label="邮编" width="120" align='center'>
 			</el-table-column>
-			<el-table-column fixed="right" label="操作" width="100">
+			<el-table-column  label="操作" width="167"align='center'>
 				<template slot-scope="scope">
 					<el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
 					<!--<el-button type="text" size="small" @click="addClick(scope.row)">编辑</el-button>-->
@@ -64,6 +64,23 @@
 				</div>
 			</el-dialog>
 		</el-table>
+		
+		
+		<el-table :data="cxdata" border style="width: 100%">
+			<el-table-column fixed prop="date" label="日期" width="150" sortable>
+			</el-table-column>
+			<el-table-column prop="name" label="姓名" width="120" align='center'>
+			</el-table-column>
+			<el-table-column prop="province" label="省份" width="120" align='center'>
+			</el-table-column>
+			<el-table-column prop="city" label="市区" width="120" align='center'>
+			</el-table-column>
+			<el-table-column prop="address" label="地址" width="300" align='center'> 
+			</el-table-column>
+			<el-table-column prop="zip" label="邮编" width="120" align='center'>
+			</el-table-column>
+			
+			</el-table>
 	</el-container>
 </template>
 
@@ -122,17 +139,18 @@
 				this.tianjia = true;
 
 			},
+			cxc(){
+				
+			},
 			cx(){
+				this.cxdata = []
 				var cx = this.select;
 				for(var i=0;i<this.tableData.length;i++){
 					if(cx ==this.tableData[i].name || cx ==this.tableData[i].zip ||cx ==this.tableData[i].province ){
-						this.cxVal = true;
-						console.log(this.tableData[i])
-						this.cxdata = this.tableData[i]
-					}else{
-						alert('没有改用户')
-						break;
 
+						this.cxdata.push(this.tableData[i]);
+						console.log(this.cxdata)
+						break
 					}
 				}
 			},
@@ -169,6 +187,7 @@
 			axios.get('/api/datatwo').then(data => {
 				this.tableData = data.data.data
 			})
+
 
 		}
 	}

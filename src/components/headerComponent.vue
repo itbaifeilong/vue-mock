@@ -1,31 +1,53 @@
 <template>
 	<div>
-	<select v-model="locale">
-      <option>en</option>
-      <option>cn</option>
-    </select>
-		<!--<p>{{$t('message.hello')}}</p>-->
+		<span ref='countup'></span>
 	</div>
 </template>
 
 <script>
+	import CountUp from 'countup.js'
 	export default{
+		name:'countup-demo',
 		data(){
 			return{
-				lang:'en',
-				locale:'en'
+				numAnim:null
 			}
 		},
-		watch:{
-			locale(val){
-				this.$i18n.locale = val
-			}
+		props:{
+			start:{
+				type:Number,
+				default:0
+			},
+			end: {
+                type: Number,
+                default: 2018
+            },
+            decimal: {
+                type: Number,
+                default: 0
+            },
+            duration: {
+                type: Number,
+                default: 2.5
+            },
+            options: {
+                type: Object
+            }
+		},
+		mounted(){
+			this.initCountUp()
 		},
 		methods:{
-			switchLang()  {
-        			this.$i18n.locale = this.lang 
-			},
-			
+			initCountUp(){
+				this.numAnim = new CountUp(this.$refs.countup,
+											this.start,
+											this.end,
+											this.decimal,
+											this.duration,
+											this.options
+											);
+				this.numAnim.start();
+			}
 		}
 	}
 </script>
