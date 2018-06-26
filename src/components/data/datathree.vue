@@ -1,33 +1,36 @@
 <template lang='pug'>
 	div
-		h1 111
-		h2 222
-		ul
-			li(v-for="item in arr") 姓名： {{item.name}} 
-		p 111
-		div(v-for="a in arry") 年龄： {{a.age}}
+		h1 --------pug模版应用----------
+		div.login-wrap(v-show="showLogin")
+			h3 登陆
+			p(v-show="showTishi") {{tishi}}
+			input(type="text" placeholder="请输入用户名" v-model="username")
+			input(type="password" placeholder="请输入密码" v-model="password")
+			button(@click="login") 登陆
+			span(@click="ToRegister") 没有账号？马上注册
 </template>
 
 <script>
 	export default{
 		data(){
 			return {
-				picLyanzhengma:'',
-				show:true,
-				arr:[
-					{name:'1'},
-					{name:'2'},
-					{name:'3'},
-					{name:'4'},
-				],
-				arry:[
-					{age:12},
-					{age:13},
-					{age:14},
-				]
+				showLogin: true,
+				showTishi: false,
+				username: '',
+				password:'',
+				tishi: '',
 			}
 		},
+		created(){
+				
+		},
 		methods:{
+			login(){
+//				console.log(this.password);
+			},
+			ToRegister(){
+				
+			}
 		}
 	}
 </script>
@@ -37,7 +40,46 @@
 		margin: 0;
 		padding: 0;
 	}
-	ul{
-		list-style: none;
+.login-wrap {
+		text-align: center;
 	}
+	
+	input {
+		display: block;
+		width: 250px;
+		height: 40px;
+		line-height: 40px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+		outline: none;
+		border: 1px solid #888;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	
+	p {
+		color: red;
+	}
+	
+	button {
+		display: block;
+		width: 250px;
+		height: 40px;
+		line-height: 40px;
+		margin: 0 auto;
+		border: none;
+		background-color: #41b883;
+		color: #fff;
+		font-size: 16px;
+		margin-bottom: 5px;
+	}
+	
+	span {
+		cursor: pointer;
+	}
+	
+	span:hover {
+		color: #41b883;
+	}
+	
 </style>

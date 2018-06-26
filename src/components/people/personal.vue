@@ -4,6 +4,8 @@
 		<h1>-----动态路由传来的名字和ID-----</h1>
 		<p>名字：{{ $route.params.username}}</p>
 		<p>ID：{{$route.params.post_id}}</p>
+		<h1>-------cookie-------------</h1>
+		<p>{{name}}</p>
 		<div>
 			<!--<h1>--------state--------</h1>
 			<p>{{num}}</p>
@@ -23,11 +25,12 @@
 </template>
 
 <script>
+import {getCookie} from '../../assets/js/cook.js'
 //	import {mapState,mapGetters} from "vuex"
 	export default {
 		data() {
 			return {
-
+				name:''
 			}
 		},
 		//计算属性
@@ -64,6 +67,9 @@
 		},
 		mounted(){
 //			this.add()
+			let uname = getCookie('username')
+			this.name = uname
+			console.log(this.name)
 		}
 	}
 </script>

@@ -19,6 +19,7 @@
     "pug-cli": "^1.0.0-alpha6",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.1",
+    "vue-i18n": "^8.0.0",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

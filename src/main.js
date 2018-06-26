@@ -11,7 +11,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'jsoneditor/dist/jsoneditor.min.css'
 import components from './components/common'
+import i18n from './i18n/i18n';
 Vue.use(ElementUI)
+
+
 //通过原型全局引用axios
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
@@ -27,6 +30,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   components: { App },
   template: '<App/>'
 })

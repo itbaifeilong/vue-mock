@@ -23,6 +23,9 @@
 			<p v-show="showTishi">{{tishi}}</p>
 			<input type="text" placeholder="请输入用户名" v-model="newUsername">
 			<input type="password" placeholder="请输入密码" v-model="newPassword">
+			<input type="text" placeholder="请输入验证码" class="yanzhengma_input" @blur="checkLpicma" v-model="picLyanzhengma">
+			<p v-show="showYzm">{{yzm}}</p>
+			<input type="button" id="code" @click="createCode"  class="verification1" v-model="checkCode"/> <br>
 			<button v-on:click="register">注册</button>
 			<span v-on:click="ToLogin">已有账号？马上登录</span>
 		</div>
@@ -67,7 +70,7 @@
 		          var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',   
 		           'S','T','U','V','W','X','Y','Z');//随机数   
 		          for(var i = 0; i < codeLength; i++) {//循环操作   
-		              var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）   
+		              var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）  
 		              code += random[index];//根据索引取得随机数加到code上   
 		         	 }   
 		             this.checkCode = code;//把code值赋给验证码   

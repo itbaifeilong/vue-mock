@@ -2,30 +2,30 @@
 	<el-container style="height: 500px; border: 1px solid #eee" v-loading="loading">
 		<el-aside style="background-color: rgb(238, 241, 246)">
 			<el-header>
-				{{table.header}}
+				{{$t('message.header')}}
 			</el-header>
 			<el-menu :default-openeds="['1','2', '3']" :default-active="$route.path">
 				<el-submenu index="1">
-					<template slot="title"><i class="el-icon-message"></i>{{table.homey}}</template>
+					<template slot="title"><i class="el-icon-message"></i>{{$t('message.homey')}}</template>
 					<el-menu-item-group>
-						<template slot="title">{{table.title1}}</template>
+						<template slot="title">{{$t('message.title1')}}</template>
 						<el-menu-item index="1-1">
-							<router-link to="/Personal/evan/post/123">{{table.people}}</router-link>
+							<router-link to="/Personal/evan/post/123">{{$t('message.people')}}</router-link>
 						</el-menu-item>
 						<el-menu-item index="1-2">
-							<router-link to="/Add/oo">{{table.add}}</router-link>
+							<router-link to="/Add/oo">{{$t('message.add')}}</router-link>
 						</el-menu-item>
 					</el-menu-item-group>
 				</el-submenu>
 				<el-submenu index="2">
-					<template slot="title"><i class="el-icon-menu"></i>{{table.data}}</template>
+					<template slot="title"><i class="el-icon-menu"></i>{{$t('message.data')}}</template>
 					<el-menu-item-group>
-						<template slot="title">{{table.title}}</template>
+						<template slot="title">{{$t('message.title')}}</template>
 						<el-menu-item index="2-1">
-							<router-link :to="{name:'dataone',params:{id:123}}">{{table.dataone}}</router-link>
+							<router-link :to="{name:'dataone',params:{id:123}}">{{$t('message.dataone')}}</router-link>
 						</el-menu-item>
 						<el-menu-item index="2-2">
-							<router-link to="/datatwo">{{table.datatwo}}</router-link>
+							<router-link to="/datatwo">{{$t('message.datatwo')}}</router-link>
 						</el-menu-item>
 						<el-menu-item index="2-2">
 							<router-link to="/datathree">pug简单运用</router-link>
@@ -54,21 +54,26 @@
 					<el-dropdown-menu slot="dropdown">
 						<el-dropdown-item>
 							<template>
-								<el-button type="text" @click="get">{{table.get}}</el-button>
+								<el-button type="text" @click="get">{{$t('message.get')}}</el-button>
 							</template>
 						</el-dropdown-item>
 						<el-dropdown-item @clcik="add">
 							<template>
-								<el-button type="text" @click="add">{{table.addme}}</el-button>
+								<el-button type="text" @click="add">{{$t('message.addme')}}</el-button>
 							</template>
 						</el-dropdown-item>
 						<el-dropdown-item @click="del">
 							<template>
-								<el-button type="text" @click="del">{{table.del}}</el-button>
+								<el-button type="text" @click="del">{{$t('message.del')}}</el-button>
 							</template>
 						</el-dropdown-item>
 					</el-dropdown-menu>
 				</el-dropdown>
+				<label for="locale">语言</label>
+				<select v-model="locale">
+			      <option value="en">English</option>
+			      <option value="cn">中文</option>
+			    </select>
 				<span>{{name}}</span>
 			</el-header>
 
@@ -86,9 +91,17 @@
 		data() {
 
 			return {
-				table: '',
+				table:'',
 				name: '',
-				loading: true
+				loading: true,
+				lang:'en',
+				locale:'cn'
+			}
+		},
+		watch:{
+			locale(val){
+				this.$i18n.locale = val
+//				setCookie('locale', val)
 			}
 		},
 		created() {
@@ -116,6 +129,9 @@
 			}
 		},
 		methods: {
+			switchLang()  {
+        			this.$i18n.locale = this.lang 
+			},
 			get() {
 				console.log('我是查看')
 				alert('我是查看')
