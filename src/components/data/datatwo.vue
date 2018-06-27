@@ -3,7 +3,7 @@
 		<el-header align="left">
 			<el-button type="primary" size="small" @click="addBind()">添加</el-button>
 			<input type="text" v-model="select" placeholder="请输入查询内容"  class="text1"/>
-			<el-button type="success" @click="cx()">成功按钮</el-button>
+			<el-button type="success" @click="cx()" size="small">查询</el-button>
 		</el-header>
 		<el-table :data="tableData" border style="width: 100%">
 			<el-table-column fixed prop="date" label="日期" width="150" sortable>

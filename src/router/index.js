@@ -88,6 +88,9 @@ export default new Router({
 		   ,{
 		   	path:'/headerComponent',
 		   	component:headerComponent
+		   },{
+		   	path:'/create',
+		   	component:create
 		   }
       
       ]

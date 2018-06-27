@@ -12,6 +12,10 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'jsoneditor/dist/jsoneditor.min.css'
 import components from './components/common'
 import i18n from './i18n/i18n';
+import VideoPlayer from 'vue-video-player'
+require('video.js/dist/video-js.css')
+require('vue-video-player/src/custom-theme.css')
+Vue.use(VideoPlayer)
 Vue.use(ElementUI)
 
 

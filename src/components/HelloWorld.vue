@@ -15,6 +15,9 @@
 						<el-menu-item index="1-2">
 							<router-link to="/Add/oo">{{$t('message.add')}}</router-link>
 						</el-menu-item>
+						<el-menu-item index="1-3">
+							<router-link to="/create">视频</router-link>
+						</el-menu-item>
 					</el-menu-item-group>
 				</el-submenu>
 				<el-submenu index="2">
@@ -27,7 +30,7 @@
 						<el-menu-item index="2-2">
 							<router-link to="/datatwo">{{$t('message.datatwo')}}</router-link>
 						</el-menu-item>
-						<el-menu-item index="2-2">
+						<el-menu-item index="2-3">
 							<router-link to="/datathree">pug简单运用</router-link>
 						</el-menu-item>
 					</el-menu-item-group>
